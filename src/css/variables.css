@@ -1,0 +1,29 @@
+:root {
+    /* Colors */
+    --color-primary: #f6f6f6;
+    --color-secondary: #c02727;
+    --text-color: #000000; 
+
+    /* Spacing */ 
+    --spacing-x-small: 0.5rem;
+    --spacing-small: 1rem;
+    --spacing-medium : 2rem;
+    --spacing-large: 3rem;
+    --spacing-x-large: 4rem;
+
+    /* Font size */
+    --font-size-small: 0.5rem;
+    --font-size-base: 1rem;
+    --font-size-medium: 1.5rem;
+    --font-size-large: 2rem;
+    --font-size-x-large: 2.5rem; 
+}
+
+a{
+    color: var(--text-color);
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url(../assets/fonts/Roboto-Regular.ttf);
+}
