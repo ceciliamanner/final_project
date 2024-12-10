@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./css/products.css" />
     <link rel="stylesheet" href="./css/cart.css" />
     <link rel="stylesheet" href="./css/style.css" />
-    <title>Home</title>
+    <title>Sign Up</title>
 </head>
 <body>
     <header>
@@ -28,13 +28,45 @@
        </div>
    </header>
 
-   <main>
-    <div class="background-images">
-        <img src="./assets/images/front-runners-background.jpeg" alt="image of runners wearing the brand">
-        <img src="./assets/images/front-page-yoga-background.jpg" alt="image of a yoga-session" class="background__image--model">
-        <img src="./assets/images/front-model-background.jpg" alt="image of a model wearing the brand" class="background__image--model"> 
-    </div>
-   </main>
+   <section class="sign-up__section">
+    <form class="sign-up-form"> 
+        <h1>Join Our Community!</h1>
+        <label for="email">Email Address*</label>
+        <input 
+        type="email" 
+        class="form__email" 
+        name="email" 
+        id="email" 
+        required
+        />
+
+        <label for="password">Password*</label>
+        <input 
+        type="password" 
+        class="form__password" 
+        name="password" 
+        id="password" 
+        required
+        /> 
+
+        <label class="checkbox-container">
+            <input type="checkbox" required>
+            <span class="checkbox-text">I agree to lululemon's Terms & Conditions. *</span>
+        </label>
+
+        <label class="checkbox-container">
+            <input type="checkbox" required>
+            <span class="checkbox-text">Sign up to receive emails from lululemon about products, services, offers, stories and events (you can unsubscribe at any time). See Privacy Policy for details.</span>
+        </label>
+
+        <button 
+        class="form__submit-btn" 
+        type="submit">Create Account
+        </button>
+
+    </form>
+    <img src="./assets/images/sign-in-background.jpg" alt="image of two runners" class="become-member__background">
+    </section>
 
    <footer>
     <div>
@@ -44,7 +76,6 @@
            <li>Store Locations</li>
        </ul>
     </div>
-
     <div>
        <h4>About Us</h4>
        <ul>
@@ -54,7 +85,6 @@
            <li>Privacy Policy</li>
        </ul>
     </div>
-
     <div>
        <h4>Connect with Us</h4>
        <i class="fa-brands fa-instagram fa-xl"></i>
@@ -64,5 +94,5 @@
    </footer>
 
     <script src="./js/app.js"></script>
-
+</body>
 </html>
