@@ -116,6 +116,9 @@ header {
     cursor: pointer;
     background-color: #ffffff;
 }
+.popup-button:hover {
+    background-color: #ccdae8;
+}
 
 /* -------------------------------------*/ 
 /* Footer styling */

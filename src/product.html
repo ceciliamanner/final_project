@@ -15,6 +15,63 @@
     <title>Products</title>
 </head>
 <body>
-    
+    <header>
+        <div class="navbar">
+            <a href="./products.html"><button class="women-btn">Women</button></a>
+       </div>
+   
+       <img src="./assets/images/logo.png" alt="lululemon logo" class="lululemon-logo">
+       
+       <div class="header__logos">
+            <a href="./sign-up.html"><i class="fa-solid fa-user-plus fa-xl"></i></a>
+            <a href="./cart.html"><i id="cart-icon" class="fa-solid fa-bag-shopping fa-xl"></i></a>    
+       </div>
+   </header>
+
+    <main>
+       <section class="product-presentation">
+        <div class="sort-buttons">
+            <button class="sort-button" data-sort="All">Show All</button>
+            <button class="sort-button" data-sort="Outwear">Outwear</button>
+            <button class="sort-button" data-sort="Sweaters">Sweaters</button>
+            <button class="sort-button" data-sort="Dresses">Dresses</button>
+            <button class="sort-button" data-sort="price-high">Price High</button>
+            <button class="sort-button" data-sort="Accessories">Accessories</button>
+            <button class="sort-button" data-sort="price-low">Price Low</button>
+        </div>
+
+        <div class="items-container"></div> 
+       </section>
+   </main>
+
+   <footer>
+    <div>
+       <h4>Contact Us</h4>
+       <ul>
+           <li>Email</li>
+           <li>Store Locations</li>
+       </ul>
+    </div>
+
+    <div>
+       <h4>About Us</h4>
+       <ul>
+           <li>Our fabric and Technology</li>
+           <li>Investors</li>
+           <li>Sustainability & Social Impact</li>
+           <li>Privacy Policy</li>
+       </ul>
+    </div>
+
+    <div>
+       <h4>Connect with Us</h4>
+       <i class="fa-brands fa-instagram fa-xl"></i>
+       <i class="fa-brands fa-facebook fa-xl"></i>
+       <i class="fa-brands fa-tiktok fa-xl"></i>
+    </div>
+   </footer>
+
+   <script src="./js/cart.js"></script>
+   <script src="./js/product.js"></script>
 </body>
 </html>
