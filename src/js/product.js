@@ -105,7 +105,7 @@ function renderItems (itemsArray) {
         }); 
 
 
-        // ONE IMAGE ON THE CARD ------* ? 
+        // ONE IMAGE ON THE CARD ------* ? (MÅ FIXAS)
         const productImage = document.createElement("img"); 
         productImage.classList.add("product-image");
         const firstColor = item.colors[0]; 
