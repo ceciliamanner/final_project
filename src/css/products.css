@@ -124,7 +124,7 @@ h3{
     line-height: 20px;
 }
 
-@media screen and (max-width: 1612px){
+@media screen and (max-width: 1412px){
     .items-container{
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
@@ -132,20 +132,6 @@ h3{
     .product-presentation{
         height: 200vh;
     }
-}
-
-@media screen and (max-width: 1104px){
-    .product-image{
-        width: 300px;
-        height: 350px;
-    }
-    .product-card{
-        width: 500px;
-    }
-    h3{
-        font-size: 15px;
-    }  
-   
 }
 
 @media screen and (max-width: 1104px){
