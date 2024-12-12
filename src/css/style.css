@@ -134,4 +134,150 @@ h4{
 }
 li {
     line-height: var(--spacing-large);
+    cursor: pointer;
 }
+i {
+    cursor: pointer;
+    margin: 0.2rem;
+}
+
+@media screen and (max-width: 1612px){
+    .background-images img{
+        width: 450px;
+        height: 650px;
+    } 
+}
+@media screen and (max-width: 1526px){
+    .background-images img{
+        width: 400px;
+        height: 600px;
+    } 
+    header {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .lululemon-logo{
+        grid-column: 2/ 3;
+    }
+}
+
+@media screen and (max-width: 1216px){
+    .background-images img{
+        width: 350px;
+        height: 500px;
+    } 
+    li{
+       line-height: var(--spacing-medium); 
+    }
+}
+
+/* Sign up form */
+@media screen and (max-width: 1003px){
+    .checkbox-container{
+        font-size: 13px;
+    }
+    .women-btn{
+    font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 939px){
+    .background-images img{
+        width: 300px;
+        height: 400px;
+    } 
+    
+   .women-btn{
+    font-size: 25px;
+   }
+   .header img{
+    width: 200px;
+    height: 50px;
+   }
+   
+   .header__logos{
+    gap: 0;
+   }
+   footer i {
+    margin: 0;
+   }
+   /* Sign up form */
+   .checkbox-container{
+    font-size: 10px;
+    }
+    .women-btn{
+        font-size: 17px;
+    }
+}
+
+/* Sign up form */
+@media screen and (max-width: 880px){
+    .checkbox-container{
+        font-size: 12px;
+        line-height: 25px;
+    }
+    .women-btn{
+    font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 828px){
+    footer h4{
+        font-size: 15px;
+        cursor: pointer;
+    }
+    footer {
+        gap: 4rem;
+    }
+    footer li {
+        display: none;
+    }
+    .fa-instagram {
+        display: none;
+    }
+    .fa-facebook {
+        display: none;
+    }
+    .fa-tiktok {
+        display: none;
+    }
+    .background-images img{
+        width: 250px;
+        height: 250;
+    }
+    .women-btn{
+        font-size: 20px;
+       } 
+    
+}
+
+/* Sign up form */
+@media screen and (max-width: 713px){
+    .form__submit-btn{
+        width: 100px;
+        height: 40px;
+        font-size: 12px;
+    }
+    .sign-up-form{
+        height: 500px;
+    }
+    .become-member__background{
+        height: 500px;
+    }
+    .sign-up-form h1 {
+        text-align: center;
+        font-size: 14px;
+    }
+    .checkbox-container{
+        font-size: 9px;
+    }
+    .women-btn{
+        display: none;
+    }
+    .fa-user-plus, .fa-bag-shopping {
+        display: none;
+    }
+}
+    
+
+
+

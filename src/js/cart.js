@@ -33,14 +33,13 @@ function updateCartIcon() {
 
 const shoppingCart = document.querySelector(".shopping-cart"); 
 const totalSum = document.querySelector(".total-sum"); 
-const checkOutBotton = document.querySelector(".checkout-button");
 
 function renderCartItems() {
     const cart = getCartData("cartItemsArray"); 
     shoppingCart.textContent = "";
    
 
-    if (cart.lenght === 0) {
+    if (cart.length === 0) {
         const emtyCartMessage = document.createElement("p");
         emtyCartMessage.textContent = "Your Cart is Empty"; 
         shoppingCart.appendChild(emtyCartMessage);
@@ -57,31 +56,14 @@ function renderCartItems() {
         const itemImage = document.createElement("img");
         itemImage.classList.add("item-image");
         
-        // * display image [0] of choosen color
-        if (item.colors && item.selectedColor) {
-            // Safely find the selected color from item.colors array
-            const selectedColor = item.colors.find(color => color.color === item.selectedColor);
+        const matchingColor = window.items.find(product => product.name === item.name)
+        ?.colors.find(color => color.color === item.color);
 
-            // If the selected color is found, set the image source, else fallback to default
-            if (selectedColor) {
-                itemImage.src = selectedColor.imageUrl[0];  // Use the first image URL for the selected color
-            } else {
-                // Fallback if the selectedColor is not found, use a default image or the first color
-                itemImage.src = item.colors[0].imageUrl[0];
-            }
+        if (matchingColor && matchingColor.imageUrl.length > 0) {
+        itemImage.src = matchingColor.imageUrl[0];
+        } 
 
-            itemImage.alt = item.name;
-        } else {
-            // If colors or selectedColor are missing, use a default fallback image
-            itemImage.src = 'default-image.jpg'; // Placeholder or fallback image
-            itemImage.alt = item.name;
-        }
-
-
-
-        /* const selectedColor = item.colors.find(color => color.color === item.selectedColor); 
-        itemImage.src = selectedColor.imageUrl[0];
-        itemImage.alt = item.name; */
+        itemImage.alt = `${item.name} image`;
         itemContainer.appendChild(itemImage);
 
         const productName = document.createElement("h3");
@@ -89,8 +71,7 @@ function renderCartItems() {
         itemContainer.appendChild(productName);
 
         const itemDetails = document.createElement("p");
-        itemDetails.textContent = `Color: ${item.selectedColor || 'N/A'}, Size: ${item.size}`;
-        /* itemDetails.textContent = `Color: ${item.color}, Size: ${item.size}`; */
+        itemDetails.textContent = `Color: ${item.color}, Size: ${item.size}`;
         itemContainer.appendChild(itemDetails);
 
         const quantityInput = document.createElement("input");
@@ -125,6 +106,8 @@ function renderCartItems() {
         shoppingCart.appendChild(itemContainer);
         total += item.price * item.quantity; 
     });
+    const totalSumElement = document.querySelector(".total-sum");
+    totalSumElement.textContent = `Total: ${total} NOK`;
 
 }
 
@@ -151,3 +134,19 @@ function removeFromCart(itemId) {
     renderCartItems();  
     updateCartIcon();
 }
+
+// ---------------- CHECK OUT ----------------------//
+
+const checkOutButton = document.querySelector(".checkout-button");
+
+checkOutButton.addEventListener("click", () => {
+    clearCart();  
+    alert("Your cart is now empty!");
+});
+
+function clearCart() {
+    localStorage.removeItem("cartItemsArray");
+    
+    renderCartItems();
+    updateCartIcon();
+}; 

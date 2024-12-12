@@ -45,6 +45,7 @@ const items = [
         description: "Adjustable back closure tucks into a secret garage and helps you customize your fit", 
     },
 ];
+window.items = items;
 
 // GET DOM ELEMENTS
 const sortButtons = document.querySelectorAll(".sort-button");
@@ -57,13 +58,14 @@ let selectedSize = null;
 // INITIAL RENDER
 window.addEventListener("DOMContentLoaded", () => {
     renderItems(items); 
+    updateCartIcon();
 });
 
-function selectColor(color) {
+function selectColor(color, item) {
     selectedColor = color.color;
     console.log(selectedColor); //
 
-    const productImage = document.querySelector(".product-image");
+    const productImage = document.querySelector(`.product-image[data-item="${item.name}"]`);
     productImage.src = color.imageUrl[0];
 }
 
@@ -91,6 +93,8 @@ function renderItems (itemsArray) {
         const productName = document.createElement("h3");
         const productPrice = document.createElement("span");
 
+
+      
         // SELECT COLOR
         const selectColorContainer = document.createElement("div"); 
         selectColorContainer.classList.add("color-select-container");
@@ -100,14 +104,15 @@ function renderItems (itemsArray) {
             colorButton.classList.add("color-button");
             colorButton.textContent = color.color; 
             colorButton.dataset.color = color.color;
-            colorButton.addEventListener("click", () => selectColor(color));
+            colorButton.addEventListener("click", () => selectColor(color, item));
             selectColorContainer.append(colorButton); 
         }); 
 
 
-        // ONE IMAGE ON THE CARD ------* ? (MÅ FIXAS)
+        // SHOW IMAGE
         const productImage = document.createElement("img"); 
         productImage.classList.add("product-image");
+        productImage.dataset.item = item.name;
         const firstColor = item.colors[0]; 
         if (firstColor && firstColor.imageUrl.length > 0){
             productImage.src = firstColor.imageUrl[0]; 
@@ -115,7 +120,7 @@ function renderItems (itemsArray) {
             imageContainer.appendChild(productImage);
         }
 
-
+        //*
         // SELECT SIZE
         const selectSizeContainer = document.createElement("div");
         selectSizeContainer.classList.add("size-select-container");
@@ -158,9 +163,9 @@ function renderItems (itemsArray) {
             );
             
             if (existingItemIndex > -1) {
-                cart[existingItemIndex].quantity += 1; // Öka kvantiteten
+                cart[existingItemIndex].quantity += 1; 
             } else {
-                cart.push(cartItem); // Lägg till som ny produkt
+                cart.push(cartItem); 
             }
 
             storeCartData("cartItemsArray", cart);
@@ -175,7 +180,7 @@ function renderItems (itemsArray) {
         card.append(
             imageContainer, 
             descriptionContainer, 
-            addToCartButton,
+            
         ); 
        
         descriptionContainer.append(
@@ -183,6 +188,7 @@ function renderItems (itemsArray) {
             productPrice,
             selectColorContainer,
             selectSizeContainer,
+            addToCartButton,
         );
         const productDescription = document.createElement("p");
         productDescription.classList.add("product-description");

@@ -43,7 +43,7 @@ signUpForm.addEventListener("submit", (e) => {
     document.body.appendChild(popup); 
     
     startShoppingButton.addEventListener("click", () => {
-        window.location.href = "index.html"; 
+        window.location.href = "product.html"; 
                 
     });
       

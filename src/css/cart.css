@@ -1,18 +1,120 @@
-#cart-icon {
-    position: relative;
+.shopping-cart{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-left: 20rem;
+    margin-top: 5rem;
+    max-height: calc(100vh - 5rem);
+    overflow-y: auto; 
 }
 
-#cart-icon[data-count]::after {
-    content: attr(data-count);
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    background-color: red;
-    color: white;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    text-align: center;
-    font-size: 12px;
-    line-height: 20px;
+.item-container{
+    width: 800px;
+    height: 500px;
+    background-color: #fff;
+    position: relative;
+    padding: 2rem;
 }
+
+.item-container p{
+    font-weight: bolder;
+}
+
+.item-image{
+    max-width: 100%;
+    max-height: 300px;  
+    object-fit: contain;  
+    margin-bottom: 10px;
+}
+
+.checkout-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    width: 400px;
+    height: 200px;
+    background-color: #fff;
+    position: fixed; 
+    top: 225px; 
+    right: 350px;
+    border: 1px solid var(--color-secondary);
+
+}
+
+.total-sum{
+    font-size: 20px;
+    margin-bottom: 2rem;
+}
+
+.checkout-button{
+    margin-bottom: 2rem;
+    width: 300px;
+    height: 50px;
+    font-size: 20px;
+    background-color: var(--color-secondary);
+    color: #fff;
+    cursor: pointer;
+}
+
+.quantity-input{
+    margin-top: 1rem;
+    width: 50px;
+    
+}
+
+.remove-button{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    width: 90px;
+    height: 35px;
+}
+
+@media screen and (max-width: 1560px){
+    .item-container{
+        width: 600px;
+    }
+}
+
+@media screen and (max-width: 1359px){
+     .item-container{
+         width: 500px;
+    }
+    .checkout-container{
+        width: 350px;
+        height: 150px;
+    }
+    .total-sum{
+        font-size: 17px;
+        margin-bottom: 1rem;
+    }
+    .checkout-button{
+        width: 200px;
+        font-size: 16px;
+    }
+    .remove-button{
+        width: 70px;
+        height: 30px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 1207px){
+    .item-container p {
+        font-size: 13px;
+    }
+    .item-container h3{
+        font-size: 15px;
+    }
+    .item-container{
+        width: 400px;
+    }
+   
+  
+}
+   
+
+
